@@ -28,7 +28,7 @@ pipeline {
         stage('activate python virtual env'){
             steps {
             sh 'python3 -m venv tutorial-env'
-            sh """
+            bash """
                 tutorial-env/bin/activate
             """
             sh 'tutorial-env/bin/activate'
