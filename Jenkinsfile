@@ -28,7 +28,7 @@ pipeline {
         stage('activate python virtual env'){
             steps {
             sh 'python3 -m venv tutorial-env'
-            sh 'tutorial-env/bin/activate'
+            sh 'source tutorial-env/bin/activate'
             sh 'python3 -m pip list'
             sh 'python3 -m pip install -r requirements.txt'
             sh 'python3 -m pip list'
