@@ -31,7 +31,7 @@ pipeline {
                 sh 'chmod -R 755 tutorial-env/*'
                 script {
                     sh """
-                    tutorial-env/bin/activate.csh
+                    tutorial-env/bin/activate
                     """
                 }
             
