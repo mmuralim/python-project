@@ -22,20 +22,16 @@ pipeline {
         stage('create python virtual env'){
             steps {
             sh 'python3 -m venv tutorial-env'
-            sh 'source tutorial-env/bin/activate'
+            }
+        }
+        stage('activate python virtual env'){
+            steps {
+            sh 'tutorial-env/bin/activate'
             sh 'python3 -m pip list'
             sh 'python3 -m pip install -r requirements.txt'
             sh 'python3 -m pip list'
             }
         }
-/*         stage('activate python virtual env'){
-            steps {
-            sh 'source tutorial-env/bin/activate'
-            sh 'python3 -m pip list'
-            sh 'python3 -m pip install -r requirements.txt'
-            sh 'python3 -m pip list'
-            }
-        } */
 /*         stage('list pip packages'){
             sh 'python3 -m pip list'
         }
