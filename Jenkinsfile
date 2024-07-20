@@ -5,7 +5,7 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World'
-                sh 'rm -rf tutorial-env'
+                //sh 'rm -rf tutorial-env'
             }
         }
         stage('Python version') {
@@ -20,13 +20,14 @@ pipeline {
                 sh 'pip --version'
             }
         }
-        stage('create python virtual env'){
+       /*  stage('create python virtual env'){
             steps {
-            sh 'python3 -m venv tutorial-env'
+            
             }
-        }
+        } */
         stage('activate python virtual env'){
             steps {
+            sh 'python3 -m venv tutorial-env'
             sh 'tutorial-env/bin/activate'
             sh 'python3 -m pip list'
             sh 'python3 -m pip install -r requirements.txt'
