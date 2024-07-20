@@ -30,7 +30,7 @@ pipeline {
                 sh 'python3 -m venv tutorial-env'
                 script {
                     sh """
-                    tutorial-env/bin/activate
+                    tutorial-env/bin/activate.csh
                     """
                 }
             
