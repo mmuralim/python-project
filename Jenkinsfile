@@ -39,7 +39,7 @@ pipeline {
             sh 'python3 -m pip list' */
             }
         }
-        stage('list pip packages'){
+        stage('check pip packages'){
             steps{
                 sh 'python3 -m pip list'
             }
