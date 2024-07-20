@@ -20,28 +20,26 @@ pipeline {
                 sh 'pip --version'
             }
         }
-       /*  stage('create python virtual env'){
-            steps {
-            
-            }
-        } */
-        stage('activate python virtual env'){
+        stage('create python virtual env'){
             steps {
                 sh 'python3 -m venv tutorial-env'
+            }
+        } 
+        stage('activate python virtual env'){
+            steps {
+                
                 sh 'chmod -R 755 tutorial-env/*'
                 script {
                     sh """
                     tutorial-env/bin/activate
                     """
                 }
-            
-            //sh 'tutorial-env/bin/activate'
-            sh 'python3 -m pip list'
+/*             sh 'python3 -m pip list'
             sh 'python3 -m pip install -r requirements.txt'
-            sh 'python3 -m pip list'
+            sh 'python3 -m pip list' */
             }
         }
-/*         stage('list pip packages'){
+        stage('list pip packages'){
             sh 'python3 -m pip list'
         }
         stage('install packages for pip'){
@@ -49,6 +47,6 @@ pipeline {
         }
         stage('list pip packages'){
             sh 'python3 -m pip list'
-        } */
+        }
     }
 }
