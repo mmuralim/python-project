@@ -40,13 +40,15 @@ pipeline {
             }
         }
         stage('list pip packages'){
-            sh 'python3 -m pip list'
+            steps{
+                sh 'python3 -m pip list'
+            }
         }
         stage('install packages for pip'){
-            sh 'python3 -m pip install -r requirements.txt'
+            steps{sh 'python3 -m pip install -r requirements.txt'}
         }
         stage('list pip packages'){
-            sh 'python3 -m pip list'
+            steps{sh 'python3 -m pip list'}
         }
     }
 }
