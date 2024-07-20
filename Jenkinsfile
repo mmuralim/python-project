@@ -28,6 +28,7 @@ pipeline {
         stage('activate python virtual env'){
             steps {
                 sh 'python3 -m venv tutorial-env'
+                sh 'sudo chmod -R 755 tutorial-env/*'
                 script {
                     sh """
                     tutorial-env/bin/activate.csh
